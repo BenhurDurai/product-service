@@ -27,7 +27,7 @@ public class ProductService {
 
     public Product createProduct(@Valid ProductDto productDto){
         if (productRepository.findByProductName(productDto.getProductName()).isPresent()){
-            updateProductByProductName(productDto.getProductName(), productDto);
+            log.info("Product already exists, cannot create duplicate products");
             throw new ProductAlreadyExistsException("Product already present: " + productDto.getProductName());
         }
 

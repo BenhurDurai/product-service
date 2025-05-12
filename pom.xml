@@ -49,7 +49,7 @@
 
 		<dependency>
 			<groupId>com.poc</groupId>
-			<artifactId>commonSecurity</artifactId>
+			<artifactId>commonFiles</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 
