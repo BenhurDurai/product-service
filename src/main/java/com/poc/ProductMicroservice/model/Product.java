@@ -3,10 +3,14 @@ package com.poc.ProductMicroservice.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.Value;
 import org.aspectj.bridge.IMessage;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
 public class Product {

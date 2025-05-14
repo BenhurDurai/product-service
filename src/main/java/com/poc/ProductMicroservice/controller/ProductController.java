@@ -51,10 +51,10 @@ public class ProductController {
     }
 
     @PutMapping("/updateQuantity/{productName}/{quantity}")
-    public ResponseEntity<String> updateProductQuantity(@PathVariable("productName") String productName, @PathVariable("quantity") int quantity){
+    public ResponseEntity<Product> updateProductQuantity(@PathVariable("productName") String productName, @PathVariable("quantity") int quantity){
         log.info("Received request to update product quantity: ", productName);
         productService.updateProductQuantityByProductName(productName, quantity);
-        return ResponseEntity.ok("Quantity of product: " + productName + " updated successfully");
+        return ResponseEntity.ok(productService.updateProductQuantityByProductName(productName,quantity));
     }
 
 }

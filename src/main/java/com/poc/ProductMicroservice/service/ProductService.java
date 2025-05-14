@@ -84,7 +84,7 @@ public class ProductService {
     }
 
 
-    public void updateProductQuantityByProductName(String productName, int quantity) {
+    public Product updateProductQuantityByProductName(String productName, int quantity) {
         Product product = productRepository.findByProductName(productName)
                 .orElseThrow(()-> new ProductNotFoundException("Product not found: " + productName));
 
@@ -93,7 +93,7 @@ public class ProductService {
             throw new RuntimeException("Quantity not available");
         }
         product.setQuantity(updatedQuantity);
-        productRepository.save(product);
         log.info("Product quantity updated successfully: {}", productName);
+        return productRepository.save(product);
     }
 }
